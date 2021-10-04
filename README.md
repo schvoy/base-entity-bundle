@@ -1,10 +1,10 @@
-# Eightmarq - Core bundle
+# EightMarq - Core bundle
 
-Core bundle is a basic bundle for all Eightmarq bundles.
+Core bundle is a basic bundle for all EightMarq bundles.
 
 ## Requirements
 
-> Important! PHP 7.4 is required for this bundle, because in this bundle we use typed properties feature!
+> Important! PHP 8 is required for this bundle, because in this bundle we use typed properties feature!
 
 ## Installation
 

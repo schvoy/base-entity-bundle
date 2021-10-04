@@ -1,7 +1,7 @@
 <?php
 
 /**
- * This file is part of the Eightmarq Symfony bundles.
+ * This file is part of the EightMarq Symfony bundles.
  *
  * (c) Norbert Schvoy <norbert.schvoy@eightmarq.com>
  *

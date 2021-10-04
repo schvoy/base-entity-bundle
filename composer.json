@@ -1,6 +1,6 @@
 {
     "name": "eightmarq/core-bundle",
-    "description": "Core bundle is a basic bundle for all Eightmarq bundles.",
+    "description": "Core bundle is a basic bundle for all EightMarq bundles.",
     "type": "symfony-bundle",
     "license": "MIT",
     "authors": [
@@ -18,13 +18,13 @@
         "psr-4": { "EightMarq\\CoreBundle\\Tests\\": "tests/" }
     },
     "require": {
-        "php": "^7.4",
-        "doctrine/common": "^2.7",
+        "php": "^8.0",
+        "doctrine/common": "^3.0",
         "knplabs/doctrine-behaviors": "^2.0",
         "ramsey/uuid": "^4.0",
-        "symfony/framework-bundle": "^5.0"
+        "symfony/framework-bundle": "^5.3"
     },
     "require-dev": {
-        "phpunit/phpunit": "^6.2"
+        "phpunit/phpunit": "^9.5"
     }
 }

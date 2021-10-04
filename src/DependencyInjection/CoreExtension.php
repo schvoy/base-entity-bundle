@@ -1,7 +1,7 @@
 <?php
 
 /**
- * This file is part of the Eightmarq Symfony bundles.
+ * This file is part of the EightMarq Symfony bundles.
  *
  * (c) Norbert Schvoy <norbert.schvoy@eightmarq.com>
  *
@@ -15,7 +15,7 @@ namespace EightMarq\CoreBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
-class CoreBundleExtension extends AbstractExtension
+class CoreExtension extends AbstractExtension
 {
     /**
      * @param array $configs
