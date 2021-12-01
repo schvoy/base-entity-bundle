@@ -15,13 +15,7 @@ namespace EightMarq\CoreBundle\Entity;
 
 interface BaseEntityInterface
 {
-    /**
-     * @return string|null
-     */
     public function getId(): ?string;
 
-    /**
-     * @param string|null $id
-     */
     public function setId(?string $id): void;
 }

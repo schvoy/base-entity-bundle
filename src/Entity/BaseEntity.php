@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace EightMarq\CoreBundle\Entity;
 
+use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Knp\DoctrineBehaviors\Contract\Entity\BlameableInterface;
 use Knp\DoctrineBehaviors\Contract\Entity\SoftDeletableInterface;
@@ -22,9 +23,7 @@ use Knp\DoctrineBehaviors\Model\SoftDeletable\SoftDeletableTrait;
 use Knp\DoctrineBehaviors\Model\Timestampable\TimestampableTrait;
 use Ramsey\Uuid\Uuid;
 
-/**
- * @ORM\MappedSuperclass()
- */
+#[ORM\MappedSuperclass]
 class BaseEntity implements BaseEntityInterface, TimestampableInterface, BlameableInterface, SoftDeletableInterface
 {
     use BaseEntityMethodsTrait;
@@ -32,13 +31,9 @@ class BaseEntity implements BaseEntityInterface, TimestampableInterface, Blameab
     use SoftDeletableTrait;
     use TimestampableTrait;
 
-    /**
-     * @var string|null
-     *
-     * @ORM\Column(type="guid", unique=true)
-     * @ORM\GeneratedValue(strategy="NONE")
-     * @ORM\Id()
-     */
+    #[ORM\Column(type: Types::GUID, unique: true)]
+    #[ORM\GeneratedValue(strategy: 'NONE')]
+    #[ORM\Id]
     protected ?string $id;
 
     public function __construct()

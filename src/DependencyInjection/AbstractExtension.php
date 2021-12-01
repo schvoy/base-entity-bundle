@@ -19,15 +19,10 @@ use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
 
 abstract class AbstractExtension extends Extension implements PrependExtensionInterface
 {
-    /**
-     * @var array
-     */
     protected array $targetEntities = [];
 
     /**
      * Allow an extension to prepend the extension configurations.
-     *
-     * @param ContainerBuilder $container
      */
     public function prepend(ContainerBuilder $container): void
     {

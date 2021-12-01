@@ -17,10 +17,6 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 class CoreExtension extends AbstractExtension
 {
-    /**
-     * @param array $configs
-     * @param ContainerBuilder $container
-     */
     public function load(array $configs, ContainerBuilder $container)
     {
 

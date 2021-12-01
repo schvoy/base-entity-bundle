@@ -15,17 +15,11 @@ namespace EightMarq\CoreBundle\Entity;
 
 trait BaseEntityMethodsTrait
 {
-    /**
-     * @return string|null
-     */
     public function getId(): ?string
     {
         return $this->id;
     }
 
-    /**
-     * @param string|null $id
-     */
     public function setId(?string $id): void
     {
         $this->id = $id;
