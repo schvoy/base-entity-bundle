@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.9.0
+
+* Allow to use higher php version than 8.1
+* Replace knplabs/doctrine-behaviors to eightmarq/doctrine-behaviors
+* Bump minimum version of Symfony to 6.4, allow Symfony 7.0
+
 ## 0.8.0
 
 * Update required php version to 8.1
