@@ -11,10 +11,19 @@
 
 declare(strict_types=1);
 
-namespace EightMarq\CoreBundle;
+namespace EightMarq\CoreBundle\Entity\Traits;
 
-use Symfony\Component\HttpKernel\Bundle\Bundle;
+use Symfony\Component\Uid\Ulid;
 
-class CoreBundle extends Bundle
+trait UlidBasedEntityMethodsTrait
 {
+    public function getId(): Ulid|null
+    {
+        return $this->id;
+    }
+
+    public function setId(Ulid|null $id): void
+    {
+        $this->id = $id;
+    }
 }

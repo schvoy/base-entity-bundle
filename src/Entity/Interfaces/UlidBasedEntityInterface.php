@@ -11,10 +11,13 @@
 
 declare(strict_types=1);
 
-namespace EightMarq\CoreBundle;
+namespace EightMarq\CoreBundle\Entity\Interfaces;
 
-use Symfony\Component\HttpKernel\Bundle\Bundle;
+use Symfony\Component\Uid\Ulid;
 
-class CoreBundle extends Bundle
+interface UlidBasedEntityInterface
 {
+    public function getId(): Ulid|null;
+
+    public function setId(Ulid|null $id): void;
 }

@@ -13,31 +13,29 @@ declare(strict_types=1);
 
 namespace EightMarq\CoreBundle\Entity;
 
-use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use EightMarq\CoreBundle\Entity\Interfaces\UuidBasedEntityInterface;
+use EightMarq\CoreBundle\Entity\Traits\UuidBasedEntityMethodsTrait;
 use Knp\DoctrineBehaviors\Contract\Entity\BlameableInterface;
 use Knp\DoctrineBehaviors\Contract\Entity\SoftDeletableInterface;
 use Knp\DoctrineBehaviors\Contract\Entity\TimestampableInterface;
 use Knp\DoctrineBehaviors\Model\Blameable\BlameableTrait;
 use Knp\DoctrineBehaviors\Model\SoftDeletable\SoftDeletableTrait;
 use Knp\DoctrineBehaviors\Model\Timestampable\TimestampableTrait;
-use Ramsey\Uuid\Uuid;
+use Symfony\Bridge\Doctrine\Types\UuidType;
+use Symfony\Component\Uid\Uuid;
 
 #[ORM\MappedSuperclass]
-class BaseEntity implements BaseEntityInterface, TimestampableInterface, BlameableInterface, SoftDeletableInterface
+class UuidBasedEntity implements UuidBasedEntityInterface, TimestampableInterface, BlameableInterface, SoftDeletableInterface
 {
-    use BaseEntityMethodsTrait;
+    use UuidBasedEntityMethodsTrait;
     use BlameableTrait;
     use SoftDeletableTrait;
     use TimestampableTrait;
 
-    #[ORM\Column(type: Types::GUID, unique: true)]
-    #[ORM\GeneratedValue(strategy: 'NONE')]
     #[ORM\Id]
-    protected ?string $id;
-
-    public function __construct()
-    {
-        $this->id = Uuid::uuid4()->toString();
-    }
+    #[ORM\Column(type: UuidType::NAME, unique: true)]
+    #[ORM\GeneratedValue(strategy: 'CUSTOM')]
+    #[ORM\CustomIdGenerator(class: 'doctrine.uuid_generator')]
+    protected Uuid $id;
 }

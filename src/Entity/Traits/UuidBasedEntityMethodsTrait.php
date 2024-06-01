@@ -11,16 +11,18 @@
 
 declare(strict_types=1);
 
-namespace EightMarq\CoreBundle\Entity;
+namespace EightMarq\CoreBundle\Entity\Traits;
 
-trait BaseEntityMethodsTrait
+use Symfony\Component\Uid\Uuid;
+
+trait UuidBasedEntityMethodsTrait
 {
-    public function getId(): ?string
+    public function getId(): Uuid|null
     {
         return $this->id;
     }
 
-    public function setId(?string $id): void
+    public function setId(Uuid|null $id): void
     {
         $this->id = $id;
     }

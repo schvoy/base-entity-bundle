@@ -19,6 +19,5 @@ class CoreExtension extends AbstractExtension
 {
     public function load(array $configs, ContainerBuilder $container)
     {
-
     }
 }

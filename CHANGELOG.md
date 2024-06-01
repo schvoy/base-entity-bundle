@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.0.0
+
+* Bump composer packages, increase minimum versions (php to 8.3, Symfony to 7.1)
+* Replace ramsey/uuid with symfony/uid in dependencies
+* Replace doctrine/common with doctrine/orm in dependencies
+* Add friendsofphp/php-cs-fixer
+* Introduce new base entities instead of `EightMarq\CoreBundle\Entity\BaseEntity`:  
+  * `EightMarq\CoreBundle\Entity\UuidBasedEntity`
+  * `EightMarq\CoreBundle\Entity\UlidBasedEntity`
+  * `EightMarq\CoreBundle\Entity\IdBasedEntity` 
+
 ## 0.9.0
 
 * Allow to use higher php version than 8.1

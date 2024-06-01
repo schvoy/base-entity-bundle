@@ -11,10 +11,11 @@
 
 declare(strict_types=1);
 
-namespace EightMarq\CoreBundle;
+namespace EightMarq\CoreBundle\Entity\Interfaces;
 
-use Symfony\Component\HttpKernel\Bundle\Bundle;
-
-class CoreBundle extends Bundle
+interface IdBasedEntityInterface
 {
+    public function getId(): int|null;
+
+    public function setId(int|null $id): void;
 }

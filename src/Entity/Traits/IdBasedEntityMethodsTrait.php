@@ -11,11 +11,17 @@
 
 declare(strict_types=1);
 
-namespace EightMarq\CoreBundle\Entity;
+namespace EightMarq\CoreBundle\Entity\Traits;
 
-interface BaseEntityInterface
+trait IdBasedEntityMethodsTrait
 {
-    public function getId(): ?string;
+    public function getId(): int|null
+    {
+        return $this->id;
+    }
 
-    public function setId(?string $id): void;
+    public function setId(int|null $id): void
+    {
+        $this->id = $id;
+    }
 }

@@ -4,33 +4,42 @@ Core bundle is a basic bundle for all EightMarq bundles.
 
 ## Requirements
 
-> Important! PHP 8.1 is required for this bundle, because in this bundle we use typed properties feature!
+> PHP 8.3
+> Symfony 7.1
 
 ## Installation
 
 ```bash
-composer require knplabs/doctrine-behaviors
+composer require eightmarq/doctrine-behaviors
 composer require eightmarq/core-bundle
 ```
 
 ## Usage
 
-### Entity 
+### Base entities
 
 ```php
-class <your-entity-name> extends BaseEntity
+class <your-entity-name> extends UuidBasedEntity
 ```
 
-`EightMarq\CoreBundle\Entity\BaseEntity` provides basic entity functionalities:
+```php
+class <your-entity-name> extends UlidBasedEntity
+```
+
+```php
+class <your-entity-name> extends IdBasedEntity
+```
+
+**All of them provide basic entity functionalities:**
 
 * $id property with getId() / setId() method
-* Timestampable behavior (KnpLabs/DoctrineBehaviors)
-* SoftDeleteable behavior (KnpLabs/DoctrineBehaviors)
-* Blameable behavior (KnpLabs/DoctrineBehaviors)
+* Timestampable behavior (Eightmarq/DoctrineBehaviors fork of KnpLabs/DoctrineBehaviors)
+* SoftDeleteable behavior (Eightmarq/DoctrineBehaviors fork of KnpLabs/DoctrineBehaviors)
+* Blameable behavior (Eightmarq/DoctrineBehaviorsfork of KnpLabs/DoctrineBehaviors)
 
 ### AbstractExtension
 
-If you create a new bundle, you should use `EightMarq\CoreBundle\DependencyInjection\AbstractExtension`
+If you create a new bundle, you can extend `EightMarq\CoreBundle\DependencyInjection\AbstractExtension`
 instead of using directly use `Symfony\Component\DependencyInjection\Extension\Extension` class.
 
 #### Provides
@@ -54,4 +63,4 @@ public function prepend(ContainerBuilder $container): void
 
 ## Configuration reference
 
-No configuration
+Not needed any extra configuration
