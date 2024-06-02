@@ -39,7 +39,7 @@
             "vendor/bin/php-cs-fixer fix --dry-run src",
             "vendor/bin/php-cs-fixer fix --dry-run tests"
         ],
-        "test": [
+        "tests": [
             "vendor/bin/phpunit"
         ]
     }
