@@ -1,0 +1,27 @@
+name: Run tests
+
+on:
+    push:
+        branches: [ "master" ]
+    pull_request:
+        branches: [ "master" ]
+
+permissions:
+    contents: read
+
+jobs:
+    run_tests:
+        strategy:
+            matrix:
+                php:
+                    - 8.3
+        runs-on: ubuntu-latest
+
+        steps:
+            -   uses: actions/checkout@v4
+            -   uses: shivammathur/setup-php@v2
+                with:
+                    php-version: ${{ matrix.php }}
+                    extensions: pdo_sqlite
+            -   run: composer install --no-progress
+            -   run: composer tests
