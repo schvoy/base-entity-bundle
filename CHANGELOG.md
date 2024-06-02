@@ -12,7 +12,7 @@
   * `EightMarq\CoreBundle\Entity\IdBasedEntity` 
 * Add test environment for phpunit tests
 * Add tests for basic entities
-* Add `before-commit` composer script 
+* Add `before-commit`, `code-quality` and `test` composer scripts 
 
 ## 0.9.0
 

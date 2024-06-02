@@ -34,7 +34,13 @@
             "vendor/bin/php-cs-fixer fix src",
             "vendor/bin/php-cs-fixer fix tests",
             "vendor/bin/phpunit"
+        ],
+        "code-quality": [
+            "vendor/bin/php-cs-fixer fix --dry-run src",
+            "vendor/bin/php-cs-fixer fix --dry-run tests"
+        ],
+        "test": [
+            "vendor/bin/phpunit"
         ]
-
     }
 }
