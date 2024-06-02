@@ -5,11 +5,14 @@
 * Bump composer packages, increase minimum versions (php to 8.3, Symfony to 7.1)
 * Replace ramsey/uuid with symfony/uid in dependencies
 * Replace doctrine/common with doctrine/orm in dependencies
-* Add friendsofphp/php-cs-fixer
+* Add friendsofphp/php-cs-fixer, doctrine/doctrine-bundle packages
 * Introduce new base entities instead of `EightMarq\CoreBundle\Entity\BaseEntity`:  
   * `EightMarq\CoreBundle\Entity\UuidBasedEntity`
   * `EightMarq\CoreBundle\Entity\UlidBasedEntity`
   * `EightMarq\CoreBundle\Entity\IdBasedEntity` 
+* Add test environment for phpunit tests
+* Add tests for basic entities
+* Add `before-commit` composer script 
 
 ## 0.9.0
 

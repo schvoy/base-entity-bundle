@@ -32,7 +32,7 @@ class IdBasedEntity implements IdBasedEntityInterface, TimestampableInterface, B
     use TimestampableTrait;
 
     #[ORM\Id]
-    #[ORM\GeneratedValue]
-    #[ORM\Column]
-    private int|null $id = null;
+    #[ORM\Column(type: 'integer')]
+    #[ORM\GeneratedValue(strategy: 'AUTO')]
+    protected int|null $id = null;
 }

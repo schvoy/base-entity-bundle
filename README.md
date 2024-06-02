@@ -5,6 +5,7 @@ Core bundle is a basic bundle for all EightMarq bundles.
 ## Requirements
 
 > PHP 8.3
+
 > Symfony 7.1
 
 ## Installation
