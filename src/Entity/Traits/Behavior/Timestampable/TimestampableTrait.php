@@ -11,10 +11,10 @@
 
 declare(strict_types=1);
 
-namespace EightMarq\CoreBundle\Tests\Fixtures\Repository;
+namespace EightMarq\CoreBundle\Entity\Traits\Behavior\Timestampable;
 
-use Doctrine\ORM\EntityRepository;
-
-class UuidBasedArticleRepository extends EntityRepository
+trait TimestampableTrait
 {
+    use TimestampablePropertiesTrait;
+    use TimestampableMethodsTrait;
 }

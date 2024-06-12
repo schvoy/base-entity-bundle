@@ -32,6 +32,7 @@ return function (ContainerConfigurator $container): void {
         ->autowire()
         ->autoconfigure();
 
+    $services->load('EightMarq\CoreBundle\EventListener\\', '../../src/EventListener/*');
     $services->load('EightMarq\CoreBundle\Tests\Services\\', '../Services/*');
 
     $container->extension('doctrine', [

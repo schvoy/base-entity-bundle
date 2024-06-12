@@ -33,7 +33,8 @@ final class Kernel extends SymfonyKernel
 
     public function getCacheDir(): string
     {
-        return sys_get_temp_dir().'/core_test';
+        // TODO remove/revert before commit ?!
+        return sys_get_temp_dir().'/core_test'.uniqid('', true);
     }
 
     public function getLogDir(): string

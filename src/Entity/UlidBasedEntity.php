@@ -14,23 +14,23 @@ declare(strict_types=1);
 namespace EightMarq\CoreBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use EightMarq\CoreBundle\Entity\Interfaces\Behavior\SoftDeleteableInterface;
+use EightMarq\CoreBundle\Entity\Interfaces\Behavior\TimestampableInterface;
 use EightMarq\CoreBundle\Entity\Interfaces\UlidBasedEntityInterface;
+use EightMarq\CoreBundle\Entity\Traits\Behavior\SoftDeleteable\SoftDeleteableTrait;
+use EightMarq\CoreBundle\Entity\Traits\Behavior\Timestampable\TimestampableTrait;
 use EightMarq\CoreBundle\Entity\Traits\UlidBasedEntityMethodsTrait;
 use Knp\DoctrineBehaviors\Contract\Entity\BlameableInterface;
-use Knp\DoctrineBehaviors\Contract\Entity\SoftDeletableInterface;
-use Knp\DoctrineBehaviors\Contract\Entity\TimestampableInterface;
 use Knp\DoctrineBehaviors\Model\Blameable\BlameableTrait;
-use Knp\DoctrineBehaviors\Model\SoftDeletable\SoftDeletableTrait;
-use Knp\DoctrineBehaviors\Model\Timestampable\TimestampableTrait;
 use Symfony\Bridge\Doctrine\Types\UlidType;
 use Symfony\Component\Uid\Ulid;
 
 #[ORM\MappedSuperclass]
-class UlidBasedEntity implements UlidBasedEntityInterface, TimestampableInterface, BlameableInterface, SoftDeletableInterface
+class UlidBasedEntity implements UlidBasedEntityInterface, TimestampableInterface, BlameableInterface, SoftDeleteableInterface
 {
     use UlidBasedEntityMethodsTrait;
     use BlameableTrait;
-    use SoftDeletableTrait;
+    use SoftDeleteableTrait;
     use TimestampableTrait;
 
     #[ORM\Id]

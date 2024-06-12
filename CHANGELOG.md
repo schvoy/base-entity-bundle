@@ -10,9 +10,18 @@
   * `EightMarq\CoreBundle\Entity\UuidBasedEntity`
   * `EightMarq\CoreBundle\Entity\UlidBasedEntity`
   * `EightMarq\CoreBundle\Entity\IdBasedEntity` 
-* Add test environment for phpunit tests
-* Add tests for basic entities
+* Add test environment for PhpUnit tests
+* Add PhpUnit tests 
 * Add `before-commit`, `code-quality` and `tests` composer scripts 
+* Replace knplabs/doctrine-behaviors (fork) with new doctrine behavior implementations
+  * `EightMarq\CoreBundle\Entity\Interfaces\Behavior\TimestampableInterface`
+    * `EightMarq\CoreBundle\Entity\Traits\Behavior\SoftDeleteable\SoftDeleteableMethodsTrait`
+    * `EightMarq\CoreBundle\Entity\Traits\Behavior\SoftDeleteable\SoftDeleteableProperiesTrait`
+    * `EightMarq\CoreBundle\Entity\Traits\Behavior\SoftDeleteable\SoftDeleteableTrait`
+  * `EightMarq\CoreBundle\Entity\Interfaces\Behavior\SoftdeletableInterface`
+    * `EightMarq\CoreBundle\Entity\Traits\Behavior\Timestampable\TimestampableMethodsTrait`
+    * `EightMarq\CoreBundle\Entity\Traits\Behavior\Timestampable\TimestampableProperiesTrait`
+    * `EightMarq\CoreBundle\Entity\Traits\Behavior\Timestampable\TimestampableTrait`
 
 ## 0.9.0
 

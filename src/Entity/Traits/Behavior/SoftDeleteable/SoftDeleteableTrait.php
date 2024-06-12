@@ -11,10 +11,10 @@
 
 declare(strict_types=1);
 
-namespace EightMarq\CoreBundle\Tests\Fixtures\Repository;
+namespace EightMarq\CoreBundle\Entity\Traits\Behavior\SoftDeleteable;
 
-use Doctrine\ORM\EntityRepository;
-
-class IdBasedArticleRepository extends EntityRepository
+trait SoftDeleteableTrait
 {
+    use SoftDeleteablePropertiesTrait;
+    use SoftDeleteableMethodsTrait;
 }

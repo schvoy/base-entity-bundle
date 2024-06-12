@@ -11,7 +11,6 @@ Core bundle is a basic bundle for all EightMarq bundles.
 ## Installation
 
 ```bash
-composer require eightmarq/doctrine-behaviors
 composer require eightmarq/core-bundle
 ```
 
@@ -34,9 +33,27 @@ class <your-entity-name> extends IdBasedEntity
 **All of them provide basic entity functionalities:**
 
 * $id property with getId() / setId() method
-* Timestampable behavior (Eightmarq/DoctrineBehaviors fork of KnpLabs/DoctrineBehaviors)
-* SoftDeleteable behavior (Eightmarq/DoctrineBehaviors fork of KnpLabs/DoctrineBehaviors)
+* Timestampable behavior
+* SoftDeleteable behavior
 * Blameable behavior (Eightmarq/DoctrineBehaviorsfork of KnpLabs/DoctrineBehaviors)
+
+### Doctrine behavior
+
+> Originally this package used the `KnpLabs/DoctrineBehaviors`, but there is/was a [maintainer issue](https://github.com/KnpLabs/DoctrineBehaviors/issues/711).
+
+We implemented the most commonly used behaviors in this package based on the original package (not 100% equivalent).
+
+#### Timestampable
+
+TODO -- document it
+
+#### SoftDeleteable
+
+TODO -- document it
+
+#### Blameable
+
+TODO -- document it
 
 ### AbstractExtension
 

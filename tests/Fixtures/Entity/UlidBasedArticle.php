@@ -16,10 +16,9 @@ namespace EightMarq\CoreBundle\Tests\Fixtures\Entity;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use EightMarq\CoreBundle\Entity\UlidBasedEntity;
-use EightMarq\CoreBundle\Tests\Fixtures\Repository\UlidBasedArticleRepository;
 
-#[ORM\Entity(repositoryClass: UlidBasedArticleRepository::class)]
-#[ORM\Table(name: 'ulid_articles')]
+#[ORM\Entity]
+#[ORM\Table]
 class UlidBasedArticle extends UlidBasedEntity
 {
     #[ORM\Column(type: Types::STRING)]

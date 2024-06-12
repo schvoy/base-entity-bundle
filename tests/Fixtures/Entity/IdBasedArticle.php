@@ -16,10 +16,9 @@ namespace EightMarq\CoreBundle\Tests\Fixtures\Entity;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use EightMarq\CoreBundle\Entity\IdBasedEntity;
-use EightMarq\CoreBundle\Tests\Fixtures\Repository\IdBasedArticleRepository;
 
-#[ORM\Entity(repositoryClass: IdBasedArticleRepository::class)]
-#[ORM\Table(name: 'id_articles')]
+#[ORM\Entity]
+#[ORM\Table]
 class IdBasedArticle extends IdBasedEntity
 {
     #[ORM\Column(type: Types::STRING)]
