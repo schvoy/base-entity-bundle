@@ -26,25 +26,25 @@ final class SoftDeleteableEventListener
         $objectManager = $onFlushEventArgs->getObjectManager();
         $unitOfWork = $objectManager->getUnitOfWork();
 
-        foreach ($unitOfWork->getScheduledEntityDeletions() as $entity) {
-            if (!$entity instanceof SoftDeleteableInterface) {
+        foreach ($unitOfWork->getScheduledEntityDeletions() as $object) {
+            if (!$object instanceof SoftDeleteableInterface) {
                 return;
             }
 
-            $previousDeletedAtValue = $entity->getDeletedAt();
+            $previousDeletedAtValue = $object->getDeletedAt();
 
-            $entity->delete();
-            $objectManager->persist($entity);
+            $object->delete();
+            $objectManager->persist($object);
 
             $unitOfWork->propertyChanged(
-                $entity,
+                $object,
                 SoftDeleteableInterface::DELETED_AT_FIELD,
                 $previousDeletedAtValue,
-                $entity->getDeletedAt()
+                $object->getDeletedAt()
             );
 
-            $unitOfWork->scheduleExtraUpdate($entity, [
-                SoftDeleteableInterface::DELETED_AT_FIELD => [$previousDeletedAtValue, $entity->getDeletedAt()],
+            $unitOfWork->scheduleExtraUpdate($object, [
+                SoftDeleteableInterface::DELETED_AT_FIELD => [$previousDeletedAtValue, $object->getDeletedAt()],
             ]);
         }
     }

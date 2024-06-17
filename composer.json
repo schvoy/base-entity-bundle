@@ -19,10 +19,10 @@
     },
     "require": {
         "php": ">=8.3",
-        "eightmarq/doctrine-behaviors": "^2.7",
         "symfony/framework-bundle": "^7.1",
         "symfony/uid": "^7.1",
-        "doctrine/orm": "^2.19",
+        "symfony/security-bundle": "^7.1",
+        "doctrine/orm": "^3.2",
         "doctrine/doctrine-bundle": "^2.12"
     },
     "require-dev": {

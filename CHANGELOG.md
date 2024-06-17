@@ -21,7 +21,13 @@
   * `EightMarq\CoreBundle\Entity\Interfaces\Behavior\SoftdeletableInterface`
     * `EightMarq\CoreBundle\Entity\Traits\Behavior\Timestampable\TimestampableMethodsTrait`
     * `EightMarq\CoreBundle\Entity\Traits\Behavior\Timestampable\TimestampableProperiesTrait`
-    * `EightMarq\CoreBundle\Entity\Traits\Behavior\Timestampable\TimestampableTrait`
+    * `EightMarq\CoreBundle\Entity\Traits\Behavior\Timestampable\TimestampableTrait` 
+  * `EightMarq\CoreBundle\Entity\Interfaces\Behavior\BlamableInterface`
+    * `EightMarq\CoreBundle\Entity\Traits\Behavior\Blamable\BlamableMethodsTrait`
+    * `EightMarq\CoreBundle\Entity\Traits\Behavior\Blamable\BlamableProperiesTrait`
+    * `EightMarq\CoreBundle\Entity\Traits\Behavior\Blamable\BlamableTrait`
+  * Remove eightmarq/doctrine-behaviors (fork of knplabs/doctrine-behaviors) dependency
+  * Add symfony/security-bundle dependency
 
 ## 0.9.0
 

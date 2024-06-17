@@ -15,14 +15,14 @@ namespace EightMarq\CoreBundle\Entity;
 
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use EightMarq\CoreBundle\Entity\Interfaces\Behavior\BlameableInterface;
 use EightMarq\CoreBundle\Entity\Interfaces\Behavior\SoftDeleteableInterface;
 use EightMarq\CoreBundle\Entity\Interfaces\Behavior\TimestampableInterface;
 use EightMarq\CoreBundle\Entity\Interfaces\IdBasedEntityInterface;
+use EightMarq\CoreBundle\Entity\Traits\Behavior\Blameable\BlameableTrait;
 use EightMarq\CoreBundle\Entity\Traits\Behavior\SoftDeleteable\SoftDeleteableTrait;
 use EightMarq\CoreBundle\Entity\Traits\Behavior\Timestampable\TimestampableTrait;
 use EightMarq\CoreBundle\Entity\Traits\IdBasedEntityMethodsTrait;
-use Knp\DoctrineBehaviors\Contract\Entity\BlameableInterface;
-use Knp\DoctrineBehaviors\Model\Blameable\BlameableTrait;
 
 #[ORM\MappedSuperclass]
 class IdBasedEntity implements IdBasedEntityInterface, TimestampableInterface, BlameableInterface, SoftDeleteableInterface
