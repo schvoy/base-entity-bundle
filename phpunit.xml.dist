@@ -7,6 +7,9 @@
             <directory suffix="Test.php">./tests</directory>
         </testsuite>
     </testsuites>
+    <php>
+        <env name="KERNEL_CLASS" value="EightMarq\CoreBundle\Tests\HttpKernel\Kernel"/>
+    </php>
     <source>
         <include>
             <directory>./</directory>

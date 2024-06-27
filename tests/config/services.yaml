@@ -1,0 +1,33 @@
+parameters:
+    env(DB_ENGINE): 'pdo_sqlite'
+    env(DB_HOST): 'localhost'
+    env(DB_NAME): 'core_test'
+    env(DB_USER): 'root'
+    env(DB_PASSWD): ''
+    env(DB_MEMORY): 'true'
+    kernel.secret: 'test_secret'
+    locale: 'en'
+
+services:
+    _defaults:
+        public: true
+        autowire: true
+        autoconfigure: true
+
+    'symfony.context':
+        public: true
+        alias: Symfony\Bundle\SecurityBundle\Security
+
+    EightMarq\CoreBundle\Tests\Services\:
+        resource: '../Services/'
+
+    EightMarq\CoreBundle\EventListener\BlameableEventListener:
+        tags: [ 'doctrine.event_subscriber' ]
+        arguments:
+            $security: '@Symfony\Bundle\SecurityBundle\Security'
+
+    EightMarq\CoreBundle\EventListener\TimestampableEventListener:
+        tags: [ 'doctrine.event_subscriber' ]
+
+    EightMarq\CoreBundle\EventListener\SoftDeleteableEventListener:
+        tags: [ 'doctrine.event_subscriber' ]

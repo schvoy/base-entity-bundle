@@ -13,41 +13,20 @@ declare(strict_types=1);
 
 namespace EightMarq\CoreBundle\Tests\HttpKernel;
 
-use Doctrine\Bundle\DoctrineBundle\DoctrineBundle;
-use EightMarq\CoreBundle\CoreBundle;
-use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
-use Symfony\Component\Config\Loader\LoaderInterface;
+use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Component\HttpKernel\Kernel as SymfonyKernel;
 
 final class Kernel extends SymfonyKernel
 {
-    public function __construct(private readonly array $configs = [])
-    {
-        parent::__construct('test', false);
-    }
+    use MicroKernelTrait;
 
-    public function registerBundles(): array
+    public function getProjectDir(): string
     {
-        return [new CoreBundle(), new DoctrineBundle(), new FrameworkBundle()];
+        return __DIR__.'/..';
     }
 
     public function getCacheDir(): string
     {
-        // TODO remove/revert before commit ?!
-        return sys_get_temp_dir().'/core_test'.uniqid('', true);
-    }
-
-    public function getLogDir(): string
-    {
-        return sys_get_temp_dir().'/core_test_log';
-    }
-
-    public function registerContainerConfiguration(LoaderInterface $loader): void
-    {
-        $loader->load(__DIR__.'/../config/config.php');
-
-        foreach ($this->configs as $config) {
-            $loader->load($config);
-        }
+        return $this->getProjectDir().'/../var/cache/'.$this->environment;
     }
 }

@@ -17,7 +17,7 @@ use DateTime;
 
 interface SoftDeleteableInterface
 {
-    public const DELETED_AT_FIELD = 'deletedAt';
+    public const string DELETED_AT_FIELD = 'deletedAt';
 
     public function delete(): void;
 

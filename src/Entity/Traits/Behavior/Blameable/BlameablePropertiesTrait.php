@@ -20,13 +20,13 @@ trait BlameablePropertiesTrait
 {
     #[ORM\ManyToOne(targetEntity: UserInterface::class)]
     #[ORM\JoinColumn(onDelete: 'SET NULL')]
-    protected UserInterface|null $createdBy;
+    protected UserInterface|null $createdBy = null;
 
     #[ORM\ManyToOne(targetEntity: UserInterface::class)]
     #[ORM\JoinColumn(onDelete: 'SET NULL')]
-    protected UserInterface|null $updatedBy;
+    protected UserInterface|null $updatedBy = null;
 
     #[ORM\ManyToOne(targetEntity: UserInterface::class)]
     #[ORM\JoinColumn(onDelete: 'SET NULL')]
-    protected UserInterface|null $deletedBy;
+    protected UserInterface|null $deletedBy = null;
 }

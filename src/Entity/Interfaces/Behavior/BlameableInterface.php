@@ -17,19 +17,19 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 interface BlameableInterface
 {
-    public const CREATED_BY_FIELD = 'createdBy';
-    public const UPDATED_BY_FIELD = 'updatedBy';
-    public const DELETED_BY_FIELD = 'deletedBy';
+    public const string CREATED_BY_FIELD = 'createdBy';
+    public const string UPDATED_BY_FIELD = 'updatedBy';
+    public const string DELETED_BY_FIELD = 'deletedBy';
 
-    public function getCreatedBy(): ?UserInterface;
+    public function getCreatedBy(): UserInterface|null;
 
-    public function setCreatedBy(?UserInterface $createdBy): void;
+    public function setCreatedBy(UserInterface|null $createdBy): void;
 
-    public function getUpdatedBy(): ?UserInterface;
+    public function getUpdatedBy(): UserInterface|null;
 
-    public function setUpdatedBy(?UserInterface $updatedBy): void;
+    public function setUpdatedBy(UserInterface|null $updatedBy): void;
 
-    public function getDeletedBy(): ?UserInterface;
+    public function getDeletedBy(): UserInterface|null;
 
-    public function setDeletedBy(?UserInterface $deletedBy): void;
+    public function setDeletedBy(UserInterface|null $deletedBy): void;
 }

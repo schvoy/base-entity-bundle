@@ -27,7 +27,8 @@
     },
     "require-dev": {
         "phpunit/phpunit": "^11.1",
-        "friendsofphp/php-cs-fixer": "^3.58"
+        "friendsofphp/php-cs-fixer": "^3.58",
+        "symfony/yaml": "^7.1"
     },
     "scripts": {
         "before-commit": [

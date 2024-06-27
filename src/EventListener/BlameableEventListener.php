@@ -102,9 +102,9 @@ final class BlameableEventListener
             return;
         }
 
-        $previousDeletedByValue = $object->getUpdatedBy();
+        $previousDeletedByValue = $object->getDeletedBy();
 
-        $object->setUpdatedBy($user);
+        $object->setDeletedBy($user);
 
         $unitOfWork->propertyChanged($object, BlameableInterface::DELETED_BY_FIELD, $previousDeletedByValue, $user);
     }

@@ -4,6 +4,7 @@ $finder = PhpCsFixer\Finder::create()
     ->in(__DIR__);
 
 $config = new PhpCsFixer\Config();
+$config->setParallelConfig(new PhpCsFixer\Runner\Parallel\ParallelConfig(4, 5));
 
 return $config->setRules(
     [

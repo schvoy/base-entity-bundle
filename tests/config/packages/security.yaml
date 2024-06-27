@@ -1,0 +1,21 @@
+security:
+    password_hashers:
+        App\Entity\User:
+            algorithm: 'auto'
+
+    providers:
+        app_user_provider:
+            entity:
+                class: EightMarq\CoreBundle\Tests\Fixtures\Entity\User
+                property: email
+
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        main:
+            lazy: true
+            provider: app_user_provider
+            form_login:
+                login_path: app_login
+                check_path: app_login

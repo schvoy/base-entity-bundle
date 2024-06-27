@@ -1,0 +1,18 @@
+doctrine:
+    dbal:
+        dbname: '%env(DB_NAME)%'
+        host: '%env(DB_HOST)%'
+        user: '%env(DB_USER)%'
+        password: '%env(DB_PASSWD)%'
+        driver: '%env(DB_ENGINE)%'
+        memory: '%env(bool:DB_MEMORY)%'
+    orm:
+        auto_mapping: true
+        resolve_target_entities:
+            Symfony\Component\Security\Core\User\UserInterface: EightMarq\CoreBundle\Tests\Fixtures\Entity\User
+        mappings:
+            CoreBundle:
+                is_bundle: true
+                type: attribute
+                dir: '../tests/Fixtures/Entity'
+                prefix: 'EightMarq\CoreBundle\Tests\Fixtures\Entity\'
