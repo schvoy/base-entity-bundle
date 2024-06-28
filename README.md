@@ -30,39 +30,67 @@ class <your-entity-name> extends UlidBasedEntity
 class <your-entity-name> extends IdBasedEntity
 ```
 
-**All of them provide basic entity functionalities:**
+**All of them provide commonly used entity functionalities:**
 
-* $id property with getId() / setId() method
+* `$id` property with getId() / setId() method - the value based on the class name can be integer, Uuid or Ulid
 * Timestampable behavior
+    * `$createdAt`
+    * `$updatedAt`
 * SoftDeleteable behavior
-* Blameable behavior (Eightmarq/DoctrineBehaviorsfork of KnpLabs/DoctrineBehaviors)
+    * `$deletedAt`
+* Blameable behavior
+    * `$createdBy`
+    * `$updatedBy`
+    * `$deletedBy`
 
-### Doctrine behavior
+## Doctrine behavior
 
-> Originally this package used the `KnpLabs/DoctrineBehaviors`, but there is/was a [maintainer issue](https://github.com/KnpLabs/DoctrineBehaviors/issues/711).
+Originally this package used the `KnpLabs/DoctrineBehaviors`, but there is/was a [maintainer issue](https://github.com/KnpLabs/DoctrineBehaviors/issues/711).
+Therefore this bundle contains a new implementation of the most generally used behaviors, based on the original package.
 
-We implemented the most commonly used behaviors in this package based on the original package (not 100% equivalent).
+> The implementation is not 100% equivalent to the original package.
 
-#### Timestampable
+Doctrine listeners for the behavior events are loaded automatically, but for the Blameable behavior you have to define
+which one is your User class (check the configuration part).
 
-TODO -- document it
+There are built-in implementations of the behavior interfaces attached to the base entities, but you can define your own if you want.
 
-#### SoftDeleteable
+### Timestampable
 
-TODO -- document it
+Timestampable handle the createdAt and updatedAt fields during persist and update.
 
-#### Blameable
+Your entity have to implement the `EightMarq\CoreBundle\Entity\Interfaces\Behavior\TimestampableInterface`. 
 
-TODO -- document it
+### SoftDeleteable
 
-### AbstractExtension
+The behavior keeps the data in the database without real data removal, it is just set the deletedAt value on the entity.
+
+This bundle provides extra helping methods for this behavior on the entity:
+
+- delete()
+- restore()
+- isDeleted()
+- willBeDeleted()
+
+Your entity have to implement the `EightMarq\CoreBundle\Entity\Interfaces\Behavior\SoftdeletableInterface`.
+
+### Blameable
+
+Tracks who did the changes on the entity during persist, update or remove (working only with soft delete).
+
+When the entity implements the `EightMarq\CoreBundle\Entity\Interfaces\Behavior\BlamableInterface` then the createdBy
+and updatedBy field are tracked during persist and update by default.
+
+To track also the deletedBy during remove, your entity have to implements the `EightMarq\CoreBundle\Entity\Interfaces\Behavior\SoftdeletableInterface`.
+
+> The deletedBy field will be added to the entity even if the SoftDeleteable behavior is not used, but it will be always null.
+
+## AbstractExtension for bundles
 
 If you create a new bundle, you can extend `EightMarq\CoreBundle\DependencyInjection\AbstractExtension`
 instead of using directly use `Symfony\Component\DependencyInjection\Extension\Extension` class.
 
-#### Provides
-
-##### Entity interface registration
+### Entity interface registration
 
 Your entities from the bundles will be automatically added to your project.
 
@@ -81,4 +109,11 @@ public function prepend(ContainerBuilder $container): void
 
 ## Configuration reference
 
-Not needed any extra configuration
+Required config fo Blameable behavior
+
+```yaml
+doctrine:
+    orm:
+        resolve_target_entities:
+            Symfony\Component\Security\Core\User\UserInterface: Your\Namespace\User
+```

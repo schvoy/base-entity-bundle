@@ -28,6 +28,7 @@
     * `EightMarq\CoreBundle\Entity\Traits\Behavior\Blamable\BlamableTrait`
   * Remove eightmarq/doctrine-behaviors (fork of knplabs/doctrine-behaviors) dependency
   * Add symfony/security-bundle dependency
+  * Update README.md
 
 ## 0.9.0
 
