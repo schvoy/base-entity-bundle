@@ -8,7 +8,7 @@
         </testsuite>
     </testsuites>
     <php>
-        <env name="KERNEL_CLASS" value="EightMarq\CoreBundle\Tests\HttpKernel\Kernel"/>
+        <env name="KERNEL_CLASS" value="Schvoy\BaseEntityBundle\Tests\HttpKernel\Kernel"/>
     </php>
     <source>
         <include>

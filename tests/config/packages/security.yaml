@@ -6,7 +6,7 @@ security:
     providers:
         app_user_provider:
             entity:
-                class: EightMarq\CoreBundle\Tests\Fixtures\Entity\User
+                class: Schvoy\BaseEntityBundle\Tests\Fixtures\Entity\User
                 property: email
 
     firewalls:

@@ -1,6 +1,6 @@
-# EightMarq - Core bundle
+# Base entity bundle
 
-Core bundle is a basic bundle for all EightMarq bundles.
+A bundle which provides base doctrine entities and behaviors for Symfony projects.
 
 ## Requirements
 
@@ -11,7 +11,7 @@ Core bundle is a basic bundle for all EightMarq bundles.
 ## Installation
 
 ```bash
-composer require eightmarq/core-bundle
+composer require schvoy/base-entity-bundle
 ```
 
 ## Usage
@@ -59,7 +59,7 @@ There are built-in implementations of the behavior interfaces attached to the ba
 
 Timestampable handle the createdAt and updatedAt fields during persist and update.
 
-Your entity have to implement the `EightMarq\CoreBundle\Entity\Interfaces\Behavior\TimestampableInterface`. 
+Your entity have to implement the `Schvoy\BaseEntityBundle\Entity\Interfaces\Behavior\TimestampableInterface`. 
 
 ### SoftDeleteable
 
@@ -72,22 +72,22 @@ This bundle provides extra helping methods for this behavior on the entity:
 - isDeleted()
 - willBeDeleted()
 
-Your entity have to implement the `EightMarq\CoreBundle\Entity\Interfaces\Behavior\SoftdeletableInterface`.
+Your entity have to implement the `Schvoy\BaseEntityBundle\Entity\Interfaces\Behavior\SoftdeletableInterface`.
 
 ### Blameable
 
 Tracks who did the changes on the entity during persist, update or remove (working only with soft delete).
 
-When the entity implements the `EightMarq\CoreBundle\Entity\Interfaces\Behavior\BlamableInterface` then the createdBy
+When the entity implements the `Schvoy\BaseEntityBundle\Entity\Interfaces\Behavior\BlamableInterface` then the createdBy
 and updatedBy field are tracked during persist and update by default.
 
-To track also the deletedBy during remove, your entity have to implements the `EightMarq\CoreBundle\Entity\Interfaces\Behavior\SoftdeletableInterface`.
+To track also the deletedBy during remove, your entity have to implements the `Schvoy\BaseEntityBundle\Entity\Interfaces\Behavior\SoftdeletableInterface`.
 
 > The deletedBy field will be added to the entity even if the SoftDeleteable behavior is not used, but it will be always null.
 
 ## AbstractExtension for bundles
 
-If you create a new bundle, you can extend `EightMarq\CoreBundle\DependencyInjection\AbstractExtension`
+If you create a new bundle, you can extend `Schvoy\BaseEntityBundle\DependencyInjection\AbstractExtension`
 instead of using directly use `Symfony\Component\DependencyInjection\Extension\Extension` class.
 
 ### Entity interface registration

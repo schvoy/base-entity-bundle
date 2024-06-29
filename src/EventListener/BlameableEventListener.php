@@ -1,17 +1,8 @@
 <?php
 
-/**
- * This file is part of the EightMarq Symfony bundles.
- *
- * (c) Norbert Schvoy <norbert.schvoy@eightmarq.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 declare(strict_types=1);
 
-namespace EightMarq\CoreBundle\EventListener;
+namespace Schvoy\BaseEntityBundle\EventListener;
 
 use Doctrine\Bundle\DoctrineBundle\Attribute\AsDoctrineListener;
 use Doctrine\ORM\Event\PrePersistEventArgs;
@@ -20,8 +11,8 @@ use Doctrine\ORM\Event\PreUpdateEventArgs;
 use Doctrine\ORM\Events;
 use Doctrine\ORM\UnitOfWork;
 use Doctrine\Persistence\Event\LifecycleEventArgs;
-use EightMarq\CoreBundle\Entity\Interfaces\Behavior\BlameableInterface;
-use EightMarq\CoreBundle\Entity\Interfaces\Behavior\SoftDeleteableInterface;
+use Schvoy\BaseEntityBundle\Entity\Interfaces\Behavior\BlameableInterface;
+use Schvoy\BaseEntityBundle\Entity\Interfaces\Behavior\SoftDeleteableInterface;
 use Symfony\Bundle\SecurityBundle\Security;
 use Symfony\Component\Security\Core\User\UserInterface;
 

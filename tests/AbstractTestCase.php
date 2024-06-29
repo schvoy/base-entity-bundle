@@ -1,23 +1,14 @@
 <?php
 
-/**
- * This file is part of the EightMarq Symfony bundles.
- *
- * (c) Norbert Schvoy <norbert.schvoy@eightmarq.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 declare(strict_types=1);
 
-namespace EightMarq\CoreBundle\Tests;
+namespace Schvoy\BaseEntityBundle\Tests;
 
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\EntityRepository;
-use EightMarq\CoreBundle\Tests\Fixtures\Entity\User;
-use EightMarq\CoreBundle\Tests\Services\DatabaseManager;
 use PHPUnit\Framework\Attributes\CoversNothing;
+use Schvoy\BaseEntityBundle\Tests\Fixtures\Entity\User;
+use Schvoy\BaseEntityBundle\Tests\Services\DatabaseManager;
 use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
 use Symfony\Bundle\SecurityBundle\Security;
 use Symfony\Component\DependencyInjection\ContainerInterface;

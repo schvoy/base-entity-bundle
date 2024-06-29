@@ -1,22 +1,13 @@
 <?php
 
-/**
- * This file is part of the EightMarq Symfony bundles.
- *
- * (c) Norbert Schvoy <norbert.schvoy@eightmarq.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 declare(strict_types=1);
 
-namespace EightMarq\CoreBundle\EventListener;
+namespace Schvoy\BaseEntityBundle\EventListener;
 
 use Doctrine\Bundle\DoctrineBundle\Attribute\AsDoctrineListener;
 use Doctrine\ORM\Event\LoadClassMetadataEventArgs;
 use Doctrine\ORM\Events;
-use EightMarq\CoreBundle\Entity\Interfaces\Behavior\TimestampableInterface;
+use Schvoy\BaseEntityBundle\Entity\Interfaces\Behavior\TimestampableInterface;
 
 #[AsDoctrineListener(event: Events::loadClassMetadata)]
 final class TimestampableEventListener

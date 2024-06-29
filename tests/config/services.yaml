@@ -18,16 +18,16 @@ services:
         public: true
         alias: Symfony\Bundle\SecurityBundle\Security
 
-    EightMarq\CoreBundle\Tests\Services\:
+    Schvoy\BaseEntityBundle\Tests\Services\:
         resource: '../Services/'
 
-    EightMarq\CoreBundle\EventListener\BlameableEventListener:
+    Schvoy\BaseEntityBundle\EventListener\BlameableEventListener:
         tags: [ 'doctrine.event_subscriber' ]
         arguments:
             $security: '@Symfony\Bundle\SecurityBundle\Security'
 
-    EightMarq\CoreBundle\EventListener\TimestampableEventListener:
+    Schvoy\BaseEntityBundle\EventListener\TimestampableEventListener:
         tags: [ 'doctrine.event_subscriber' ]
 
-    EightMarq\CoreBundle\EventListener\SoftDeleteableEventListener:
+    Schvoy\BaseEntityBundle\EventListener\SoftDeleteableEventListener:
         tags: [ 'doctrine.event_subscriber' ]

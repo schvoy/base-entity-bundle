@@ -1,6 +1,6 @@
 {
-    "name": "eightmarq/core-bundle",
-    "description": "Core bundle is a basic bundle for all EightMarq bundles.",
+    "name": "schvoy/base-entity-bundle",
+    "description": "A bundle which provides base doctrine entities and behaviors for Symfony projects.",
     "type": "symfony-bundle",
     "license": "MIT",
     "authors": [
@@ -11,11 +11,11 @@
     ],
     "autoload": {
         "psr-4": {
-            "EightMarq\\CoreBundle\\": "src/"
+            "Schvoy\\BaseEntityBundle\\": "src/"
         }
     },
     "autoload-dev": {
-        "psr-4": { "EightMarq\\CoreBundle\\Tests\\": "tests/" }
+        "psr-4": { "Schvoy\\BaseEntityBundle\\Tests\\": "tests/" }
     },
     "require": {
         "php": ">=8.3",

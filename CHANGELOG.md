@@ -2,30 +2,31 @@
 
 ## 1.0.0
 
+* Move repository from eightmarq/core-bundle to schvoy/base-entity-bundle
 * Bump composer packages, increase minimum versions (php to 8.3, Symfony to 7.1)
 * Replace ramsey/uuid with symfony/uid in dependencies
 * Replace doctrine/common with doctrine/orm in dependencies
 * Add friendsofphp/php-cs-fixer, doctrine/doctrine-bundle packages
-* Introduce new base entities instead of `EightMarq\CoreBundle\Entity\BaseEntity`:  
-  * `EightMarq\CoreBundle\Entity\UuidBasedEntity`
-  * `EightMarq\CoreBundle\Entity\UlidBasedEntity`
-  * `EightMarq\CoreBundle\Entity\IdBasedEntity` 
+* Introduce new base entities instead of `Schvoy\BaseEntityBundle\Entity\BaseEntity`:  
+  * `Schvoy\BaseEntityBundle\Entity\UuidBasedEntity`
+  * `Schvoy\BaseEntityBundle\Entity\UlidBasedEntity`
+  * `Schvoy\BaseEntityBundle\Entity\IdBasedEntity` 
 * Add test environment for PhpUnit tests
 * Add PhpUnit tests 
 * Add `before-commit`, `code-quality` and `tests` composer scripts 
 * Replace knplabs/doctrine-behaviors (fork) with new doctrine behavior implementations
-  * `EightMarq\CoreBundle\Entity\Interfaces\Behavior\TimestampableInterface`
-    * `EightMarq\CoreBundle\Entity\Traits\Behavior\SoftDeleteable\SoftDeleteableMethodsTrait`
-    * `EightMarq\CoreBundle\Entity\Traits\Behavior\SoftDeleteable\SoftDeleteableProperiesTrait`
-    * `EightMarq\CoreBundle\Entity\Traits\Behavior\SoftDeleteable\SoftDeleteableTrait`
-  * `EightMarq\CoreBundle\Entity\Interfaces\Behavior\SoftdeletableInterface`
-    * `EightMarq\CoreBundle\Entity\Traits\Behavior\Timestampable\TimestampableMethodsTrait`
-    * `EightMarq\CoreBundle\Entity\Traits\Behavior\Timestampable\TimestampableProperiesTrait`
-    * `EightMarq\CoreBundle\Entity\Traits\Behavior\Timestampable\TimestampableTrait` 
-  * `EightMarq\CoreBundle\Entity\Interfaces\Behavior\BlamableInterface`
-    * `EightMarq\CoreBundle\Entity\Traits\Behavior\Blamable\BlamableMethodsTrait`
-    * `EightMarq\CoreBundle\Entity\Traits\Behavior\Blamable\BlamableProperiesTrait`
-    * `EightMarq\CoreBundle\Entity\Traits\Behavior\Blamable\BlamableTrait`
+  * `Schvoy\BaseEntityBundle\Entity\Interfaces\Behavior\TimestampableInterface`
+    * `Schvoy\BaseEntityBundle\Entity\Traits\Behavior\SoftDeleteable\SoftDeleteableMethodsTrait`
+    * `Schvoy\BaseEntityBundle\Entity\Traits\Behavior\SoftDeleteable\SoftDeleteableProperiesTrait`
+    * `Schvoy\BaseEntityBundle\Entity\Traits\Behavior\SoftDeleteable\SoftDeleteableTrait`
+  * `Schvoy\BaseEntityBundle\Entity\Interfaces\Behavior\SoftdeletableInterface`
+    * `Schvoy\BaseEntityBundle\Entity\Traits\Behavior\Timestampable\TimestampableMethodsTrait`
+    * `Schvoy\BaseEntityBundle\Entity\Traits\Behavior\Timestampable\TimestampableProperiesTrait`
+    * `Schvoy\BaseEntityBundle\Entity\Traits\Behavior\Timestampable\TimestampableTrait` 
+  * `Schvoy\BaseEntityBundle\Entity\Interfaces\Behavior\BlamableInterface`
+    * `Schvoy\BaseEntityBundle\Entity\Traits\Behavior\Blamable\BlamableMethodsTrait`
+    * `Schvoy\BaseEntityBundle\Entity\Traits\Behavior\Blamable\BlamableProperiesTrait`
+    * `Schvoy\BaseEntityBundle\Entity\Traits\Behavior\Blamable\BlamableTrait`
   * Remove eightmarq/doctrine-behaviors (fork of knplabs/doctrine-behaviors) dependency
   * Add symfony/security-bundle dependency
   * Update README.md
@@ -64,5 +65,5 @@
 
 ### Added
 
-* Added `EightMarq\CoreBundle\Entity\BaseEntity` for common entity base
-* Added `EightMarq\CoreBundle\DependencyInjection\AbstractExtension` for entity interface registration
+* Added `Schvoy\BaseEntityBundle\Entity\BaseEntity` for common entity base
+* Added `Schvoy\BaseEntityBundle\DependencyInjection\AbstractExtension` for entity interface registration

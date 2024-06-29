@@ -1,22 +1,13 @@
 <?php
 
-/**
- * This file is part of the EightMarq Symfony bundles.
- *
- * (c) Norbert Schvoy <norbert.schvoy@eightmarq.com>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 declare(strict_types=1);
 
-namespace EightMarq\CoreBundle\Tests\Integration\Entity\Behavior;
+namespace Schvoy\BaseEntityBundle\Tests\Integration\Entity\Behavior;
 
-use EightMarq\CoreBundle\Tests\AbstractTestCase;
-use EightMarq\CoreBundle\Tests\Fixtures\Entity\Behavior\TimestampableEntity;
 use Override;
 use PHPUnit\Framework\Attributes\CoversNothing;
+use Schvoy\BaseEntityBundle\Tests\AbstractTestCase;
+use Schvoy\BaseEntityBundle\Tests\Fixtures\Entity\Behavior\TimestampableEntity;
 
 #[CoversNothing]
 class TimestampableBehaviorTest extends AbstractTestCase
