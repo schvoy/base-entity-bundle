@@ -44,13 +44,9 @@ abstract class AbstractTestCase extends KernelTestCase
         $databaseLoader->reload();
     }
 
-    protected function flush(bool $withClear = true): void
+    protected function flush(): void
     {
         $this->entityManager->flush();
-
-        if ($withClear) {
-            // $this->entityManager->clear();
-        }
     }
 
     protected function getEntity(int|Uuid|Ulid|null $id): object
