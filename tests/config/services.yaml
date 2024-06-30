@@ -21,6 +21,7 @@ services:
     Schvoy\BaseEntityBundle\Tests\Services\:
         resource: '../Services/'
 
+    ## Copy of src/Resources/config/services.yaml
     Schvoy\BaseEntityBundle\EventListener\BlameableEventListener:
         tags: [ 'doctrine.event_subscriber' ]
         arguments:

@@ -1,6 +1,6 @@
 security:
     password_hashers:
-        App\Entity\User:
+        Schvoy\BaseEntityBundle\Tests\Fixtures\Entity\User:
             algorithm: 'auto'
 
     providers:

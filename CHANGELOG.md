@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.2
+
+* Move config to src/Resources
+* Add service config loading to the bundle extension file
+* Test code improvements
+
 ## 1.0.1
 
 * Rename bundle files: 
@@ -40,7 +46,7 @@
 ## 0.9.0
 
 * Allow to use higher php version than 8.1
-* Replace knplabs/doctrine-behaviors to eightmarq/doctrine-behaviors
+* Replace knplabs/doctrine-behaviors with eightmarq/doctrine-behaviors
 * Bump minimum version of Symfony to 6.4, allow Symfony 7.0
 
 ## 0.8.0
