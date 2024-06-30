@@ -6,6 +6,6 @@ namespace Schvoy\BaseEntityBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class CoreBundle extends Bundle
+class BaseEntityBundle extends Bundle
 {
 }

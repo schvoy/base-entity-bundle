@@ -3,7 +3,7 @@
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" bootstrap="tests/config/bootstrap.php" colors="true"
          xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/11.1/phpunit.xsd" cacheDirectory=".phpunit.cache">
     <testsuites>
-        <testsuite name="Core Bundle Test Suite">
+        <testsuite name="Base Entity Bundle Test Suite">
             <directory suffix="Test.php">./tests</directory>
         </testsuite>
     </testsuites>

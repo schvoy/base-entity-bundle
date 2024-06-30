@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.1
+
+* Rename bundle files: 
+  * CoreBundle.php to BaseEntityBundle.php 
+  * CoreExtension.php to BaseEntityExtension.php
+
 ## 1.0.0
 
 * Move repository from eightmarq/core-bundle to schvoy/base-entity-bundle

@@ -6,7 +6,7 @@ namespace Schvoy\BaseEntityBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
-class CoreExtension extends AbstractExtension
+class BaseEntityExtension extends AbstractExtension
 {
     public function load(array $configs, ContainerBuilder $container)
     {
