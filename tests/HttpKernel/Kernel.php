@@ -20,4 +20,9 @@ final class Kernel extends SymfonyKernel
     {
         return $this->getProjectDir().'/../var/cache/'.$this->environment;
     }
+
+    public function getLogDir(): string
+    {
+        return $this->getProjectDir().'/../var/log/'.$this->environment;
+    }
 }
