@@ -3,6 +3,7 @@
 ## 1.0.3
 
 * Improve AbstractTestCase - to allow test without entity class 
+* Remove essential requirements from README.md
 
 ## 1.0.2
 

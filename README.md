@@ -2,12 +2,6 @@
 
 A bundle which provides base doctrine entities and behaviors for Symfony projects.
 
-## Requirements
-
-> PHP 8.3
-
-> Symfony 7.1
-
 ## Installation
 
 ```bash
