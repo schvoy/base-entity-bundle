@@ -10,7 +10,7 @@ composer require schvoy/base-entity-bundle
 
 ## Usage
 
-### Base entities
+### Use base entities as Mapped Superclass
 
 ```php
 class <your-entity-name> extends UuidBasedEntity
@@ -36,6 +36,24 @@ class <your-entity-name> extends IdBasedEntity
     * `$createdBy`
     * `$updatedBy`
     * `$deletedBy`
+
+### Only traits? Yes
+
+If you don't want to use the Mapped Superclasses? Than you can use only the traits.
+In this case you can extend your entity classes with the traits what you want to use.
+
+```php
+# Id entity traits
+use IdBasedEntityTrait;
+use UUidBasedEntityTrait;
+use UliddBasedEntityTrait;
+
+# Doctrine Behavior traits
+use BlameableTrait;
+use SoftDeleteableTrait;
+use TimestampableTrait;
+```
+
 
 ## Doctrine behavior
 
@@ -78,26 +96,6 @@ and updatedBy field are tracked during persist and update by default.
 To track also the deletedBy during remove, your entity have to implements the `Schvoy\BaseEntityBundle\Entity\Interfaces\Behavior\SoftdeletableInterface`.
 
 > The deletedBy field will be added to the entity even if the SoftDeleteable behavior is not used, but it will be always null.
-
-## AbstractExtension for bundles
-
-If you create a new bundle, you can extend `Schvoy\BaseEntityBundle\DependencyInjection\AbstractExtension`
-instead of using directly use `Symfony\Component\DependencyInjection\Extension\Extension` class.
-
-### Entity interface registration
-
-Your entities from the bundles will be automatically added to your project.
-
-**Usage**: override prepend function like below
-
-```php
-public function prepend(ContainerBuilder $container): void
-{
-    $this->targetEntities[<interface_class_name>] = <entity_class_name>;
-
-    parent::prepend($container);
-}
-```
 
 > More information: https://symfony.com/doc/current/doctrine/resolve_target_entity.html
 

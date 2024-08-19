@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.4
+
+* Introduce <Id|Uuid|Ulid>BasedEntityTrait to use base fields without Mapped Superclass
+* Introduce <Id|Uuid|Ulid>BasedEntityPropertyTrait to use base fields without Mapped Superclass
+
 ## 1.0.3
 
 * Improve AbstractTestCase - to allow test without entity class 
