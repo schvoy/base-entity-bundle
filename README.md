@@ -45,7 +45,7 @@ In this case you can extend your entity classes with the traits what you want to
 ```php
 # Id entity traits
 use IdBasedEntityTrait;
-use UUidBasedEntityTrait;
+use UuidBasedEntityTrait;
 use UliddBasedEntityTrait;
 
 # Doctrine Behavior traits
@@ -97,8 +97,6 @@ To track also the deletedBy during remove, your entity have to implements the `S
 
 > The deletedBy field will be added to the entity even if the SoftDeleteable behavior is not used, but it will be always null.
 
-> More information: https://symfony.com/doc/current/doctrine/resolve_target_entity.html
-
 ## Configuration reference
 
 Required config fo Blameable behavior
@@ -109,3 +107,5 @@ doctrine:
         resolve_target_entities:
             Symfony\Component\Security\Core\User\UserInterface: Your\Namespace\User
 ```
+
+> More information: https://symfony.com/doc/current/doctrine/resolve_target_entity.html

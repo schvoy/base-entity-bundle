@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.5 
+
+* Fix README
+
 ## 1.0.4
 
 * Introduce <Id|Uuid|Ulid>BasedEntityTrait to use base fields without Mapped Superclass
