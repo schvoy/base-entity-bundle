@@ -36,7 +36,9 @@ abstract class AbstractTestCase extends KernelTestCase
         $this->container = static::getContainer();
 
         $this->entityManager = $this->container->get('doctrine.orm.entity_manager');
-        $this->repository = $this->entityManager->getRepository($this->getEntityClass());
+        if (false !== $this->getEntityClass()) {
+            $this->repository = $this->entityManager->getRepository($this->getEntityClass());
+        }
         $this->security = $this->container->get('symfony.context');
 
         /** @var DatabaseManager $databaseLoader */
@@ -84,5 +86,5 @@ abstract class AbstractTestCase extends KernelTestCase
         $requestStack->push($request);
     }
 
-    abstract protected function getEntityClass(): string;
+    abstract protected function getEntityClass(): string|bool;
 }

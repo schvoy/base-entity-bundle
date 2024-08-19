@@ -52,7 +52,7 @@ class IdBasedEntityTest extends AbstractTestCase
     }
 
     #[Override]
-    protected function getEntityClass(): string
+    protected function getEntityClass(): string|bool
     {
         return IdBasedArticle::class;
     }

@@ -83,7 +83,7 @@ class TimestampableBehaviorTest extends AbstractTestCase
     }
 
     #[Override]
-    protected function getEntityClass(): string
+    protected function getEntityClass(): string|bool
     {
         return TimestampableEntity::class;
     }

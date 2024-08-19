@@ -53,7 +53,7 @@ class UlidBasedEntityTest extends AbstractTestCase
     }
 
     #[Override]
-    protected function getEntityClass(): string
+    protected function getEntityClass(): string|bool
     {
         return UlidBasedArticle::class;
     }

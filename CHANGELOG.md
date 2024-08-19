@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.3
+
+* Improve AbstractTestCase - to allow test without entity class 
+
 ## 1.0.2
 
 * Move config to src/Resources
