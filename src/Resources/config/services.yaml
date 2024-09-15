@@ -1,12 +1,15 @@
 services:
 
     Schvoy\BaseEntityBundle\EventListener\BlameableEventListener:
+        autoconfigure: true
         tags: [ 'doctrine.event_subscriber' ]
         arguments:
             $security: '@Symfony\Bundle\SecurityBundle\Security'
 
     Schvoy\BaseEntityBundle\EventListener\TimestampableEventListener:
+        autoconfigure: true
         tags: [ 'doctrine.event_subscriber' ]
 
     Schvoy\BaseEntityBundle\EventListener\SoftDeleteableEventListener:
+        autoconfigure: true
         tags: [ 'doctrine.event_subscriber' ]

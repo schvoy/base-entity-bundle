@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.6
+
+* Fix to allow auto configuration for doctrine behaviors 
+
 ## 1.0.5 
 
 * Fix README

@@ -20,15 +20,3 @@ services:
 
     Schvoy\BaseEntityBundle\Tests\Services\:
         resource: '../Services/'
-
-    ## Copy of src/Resources/config/services.yaml
-    Schvoy\BaseEntityBundle\EventListener\BlameableEventListener:
-        tags: [ 'doctrine.event_subscriber' ]
-        arguments:
-            $security: '@Symfony\Bundle\SecurityBundle\Security'
-
-    Schvoy\BaseEntityBundle\EventListener\TimestampableEventListener:
-        tags: [ 'doctrine.event_subscriber' ]
-
-    Schvoy\BaseEntityBundle\EventListener\SoftDeleteableEventListener:
-        tags: [ 'doctrine.event_subscriber' ]
