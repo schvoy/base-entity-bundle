@@ -12,7 +12,7 @@ final readonly class DatabaseManager
 {
     public function __construct(
         private EntityManagerInterface $entityManager,
-        Connection $connection
+        Connection $connection,
     ) {
         $configuration = $connection->getConfiguration();
         $configuration->setMiddlewares([]);
