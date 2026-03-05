@@ -55,11 +55,6 @@ class User extends IdBasedEntity implements UserInterface
     }
 
     #[Override]
-    public function eraseCredentials(): void
-    {
-    }
-
-    #[Override]
     public function getUserIdentifier(): string
     {
         return $this->email;

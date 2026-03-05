@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.0
+
+* Update package to support Symfony 7.4
+
 ## 1.0.6 
 
 * Fix automatically set deletedBy during object removal 
