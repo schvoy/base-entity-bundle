@@ -3,6 +3,7 @@
 ## 1.0.6 
 
 * Fix automatically set deletedBy during object removal 
+* Improve workflows
 
 ## 1.0.5 
 
