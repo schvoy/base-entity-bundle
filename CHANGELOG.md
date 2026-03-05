@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.6 
+
+* Fix automatically set deletedBy during object removal 
+
 ## 1.0.5 
 
 * Fix README

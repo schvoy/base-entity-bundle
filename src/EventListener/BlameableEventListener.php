@@ -98,6 +98,10 @@ final class BlameableEventListener
         $object->setDeletedBy($user);
 
         $unitOfWork->propertyChanged($object, BlameableInterface::DELETED_BY_FIELD, $previousDeletedByValue, $user);
+
+        $unitOfWork->scheduleExtraUpdate($object, [
+            BlameableInterface::DELETED_BY_FIELD => [$previousDeletedByValue, $object->getDeletedBy()],
+        ]);
     }
 
     private function getUnitOfWork(LifecycleEventArgs $lifecycleEventArgs): UnitOfWork
