@@ -3,7 +3,8 @@
 ## 1.0.6 
 
 * Fix automatically set deletedBy during object removal 
-* Improve workflows
+* Improve workflows to run on different php versions
+* Update package versions in composer.json to prevent install the bundle under Symfony 7.4, because the bundle contains deprecations 
 
 ## 1.0.5 
 
