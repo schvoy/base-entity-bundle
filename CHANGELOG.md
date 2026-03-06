@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.1
+
+* Increase minimal PHP version to 8.4 
+
 ## 1.1.0
 
 * Update package to support Symfony 7.4
