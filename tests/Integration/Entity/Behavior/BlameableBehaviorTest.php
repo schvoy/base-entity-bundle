@@ -9,6 +9,9 @@ use PHPUnit\Framework\Attributes\CoversNothing;
 use Schvoy\BaseEntityBundle\Tests\AbstractTestCase;
 use Schvoy\BaseEntityBundle\Tests\Fixtures\Entity\Behavior\BlameableEntity;
 
+/**
+ * @internal
+ */
 #[CoversNothing]
 class BlameableBehaviorTest extends AbstractTestCase
 {

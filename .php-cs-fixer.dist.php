@@ -1,35 +1,35 @@
 <?php
 
-$finder = PhpCsFixer\Finder::create()
-    ->in(__DIR__);
+declare(strict_types=1);
 
-$config = new PhpCsFixer\Config();
-$config->setParallelConfig(new PhpCsFixer\Runner\Parallel\ParallelConfig(4, 5));
+use PhpCsFixer\Config;
+use PhpCsFixer\Finder;
+use PhpCsFixer\Runner\Parallel\ParallelConfigFactory;
 
-return $config->setRules(
-    [
+return new Config()
+    ->setParallelConfig(ParallelConfigFactory::detect())
+    ->setRiskyAllowed(false)
+    ->setRules([
+        '@autoPHPMigration' => true,
+        '@PER-CS' => true,
+        '@PhpCsFixer' => true,
         '@Symfony' => true,
-        'blank_line_between_import_groups' => false,
-        'combine_consecutive_issets' => true,
-        'combine_consecutive_unsets' => true,
-        'explicit_indirect_variable' => true,
-        'explicit_string_variable' => true,
-        'fully_qualified_strict_types' => true,
         'global_namespace_import' => ['import_classes' => true, 'import_constants' => true, 'import_functions' => true],
-        'heredoc_to_nowdoc' => true,
-        'method_chaining_indentation' => true,
-        'multiline_comment_opening_closing' => true,
-        'multiline_whitespace_before_semicolons' => true,
-        'no_superfluous_elseif' => true,
-        'no_useless_else' => true,
-        'no_useless_return' => true,
-        'nullable_type_declaration' => ['syntax' => 'union'],
-        'ordered_class_elements' => true,
-        'php_unit_test_class_requires_covers' => true,
-        'phpdoc_types_order' => true,
-        'return_assignment' => true,
-        'simplified_null_return' => true,
-        'string_implicit_backslashes' => true,
-    ]
-)
-    ->setFinder($finder);
+        'nullable_type_declaration' => ['syntax' => 'union']
+    ])
+    // 💡 by default, Fixer looks for `*.php` files excluding `./vendor/` - here, you can groom this config
+    ->setFinder(
+        (new Finder())
+            // 💡 root folder to check
+            ->in(__DIR__)
+    // 💡 additional files, eg bin entry file
+    // ->append([__DIR__.'/bin-entry-file'])
+    // 💡 folders to exclude, if any
+    // ->exclude([/* ... */])
+    // 💡 path patterns to exclude, if any
+    // ->notPath([/* ... */])
+    // 💡 extra configs
+    // ->ignoreDotFiles(false) // true by default in v3, false in v4 or future mode
+    // ->ignoreVCSIgnored(true) // true by default
+    )
+    ;

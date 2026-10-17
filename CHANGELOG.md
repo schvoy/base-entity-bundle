@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.2
+
+* Update .php-cs-fixer.dist.php config and apply the new configuration
+
 ## 1.1.1
 
 * Increase minimal PHP version to 8.4 

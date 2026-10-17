@@ -10,6 +10,9 @@ use Schvoy\BaseEntityBundle\Tests\AbstractTestCase;
 use Schvoy\BaseEntityBundle\Tests\Fixtures\Entity\UuidBasedArticle;
 use Symfony\Component\Uid\UuidV7;
 
+/**
+ * @internal
+ */
 #[CoversNothing]
 class UuidBasedEntityTest extends AbstractTestCase
 {

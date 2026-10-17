@@ -10,6 +10,9 @@ use PHPUnit\Framework\Attributes\CoversNothing;
 use Schvoy\BaseEntityBundle\Tests\AbstractTestCase;
 use Schvoy\BaseEntityBundle\Tests\Fixtures\Entity\Behavior\SoftDeleteableEntity;
 
+/**
+ * @internal
+ */
 #[CoversNothing]
 class SoftDeleteableBehaviorTest extends AbstractTestCase
 {
