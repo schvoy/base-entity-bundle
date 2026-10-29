@@ -8,6 +8,7 @@ doctrine:
         memory: '%env(bool:DB_MEMORY)%'
     orm:
         auto_mapping: true
+        enable_native_lazy_objects:   true
         resolve_target_entities:
             Symfony\Component\Security\Core\User\UserInterface: Schvoy\BaseEntityBundle\Tests\Fixtures\Entity\User
         mappings:
