@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.3
+
+* Allow Symfony 8.0+ in composer
+
 ## 1.1.2
 
 * Update .php-cs-fixer.dist.php config and apply the new configuration
